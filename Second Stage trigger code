@@ -1,0 +1,20 @@
+// arduino uno code that triggers the SCR once the light gate has been broken
+
+int outPin = 8;    // Digital pin 8
+int inPin = 7;     // Digital pin6
+
+void setup() {
+  pinMode(outPin, OUTPUT);
+  pinMode(inPin, INPUT);
+}
+
+void loop() {
+
+  if (digitalRead(inPin) == HIGH)
+  {
+    digitalWrite(outPin, HIGH);   // sets the pin on
+    delayMicroseconds(2000);        // pauses for 50 microseconds      
+    digitalWrite(outPin, LOW);    // sets the pin off
+
+  }
+}
